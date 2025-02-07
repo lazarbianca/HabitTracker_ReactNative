@@ -1,0 +1,21 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"],
+      "tailwind.config": ["./tailwind.config.js"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "app/db/database.js",
+    "app/update/[id].jsx",
+    "app/model/habitProvider.js",
+    "app/model/localDbRepository.js"
+  ]
+}
