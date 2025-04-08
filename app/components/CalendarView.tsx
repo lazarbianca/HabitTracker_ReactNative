@@ -13,26 +13,24 @@ interface CalendarViewProps {
   onDateChange: (date: string) => void;
 }
 
-const CalendarView = ({ selectedDate, onDateChange }: CalendarViewProps) => {
-  return (
-    <Calendar
-      onDayPress={(day: DateObject) => {
-        onDateChange(day.dateString); // Notify parent about the new date
-      }}
-      markedDates={{
-        [selectedDate]: {
-          selected: true,
-          selectedColor: "gray",
-        },
-      }}
-      theme={{
-        todayTextColor: "red",
-        selectedDayBackgroundColor: "gray",
-        selectedDayTextColor: "white",
-        arrowColor: "blue",
-      }}
-    />
-  );
-};
+const CalendarView = ({ selectedDate, onDateChange }: CalendarViewProps) => (
+  <Calendar
+    onDayPress={(day: DateObject) => {
+      onDateChange(day.dateString); // Notify parent about the new date
+    }}
+    markedDates={{
+      [selectedDate]: {
+        selected: true,
+        selectedColor: "gray",
+      },
+    }}
+    theme={{
+      todayTextColor: "red",
+      selectedDayBackgroundColor: "gray",
+      selectedDayTextColor: "white",
+      arrowColor: "blue",
+    }}
+  />
+);
 
 export default CalendarView;
